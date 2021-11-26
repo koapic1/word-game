@@ -1,0 +1,40 @@
+@import "vars";
+@import "mixins";
+
+.wrap {
+    font-family: "Lexend", "Noto Sans KR";
+    padding: 30px;
+    h1 {
+        font-size: $h3;
+        font-weight: 500;
+        color: darkslategray;
+    }
+    #suggestWord {
+        margin-bottom: 50px;
+        font-size: $large-size;
+    }
+    #inputBox {
+        margin-bottom: 30px;
+        input {
+            padding: 5px 15px;
+            font-size: 20px;
+            text-align: center;
+            border-color: darkslategray;
+            border-radius: 5px;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    .score {
+        font-size: $medium-size;
+        margin-bottom: 20px;
+    }
+    .reset {
+        border: none;
+        padding: 10px 20px;
+        background-color: darkslategray;
+        color: $white-color;
+        border-radius: 5px;
+    }
+}

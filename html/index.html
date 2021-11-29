@@ -23,6 +23,11 @@
             </div>
             <div class="score"></div>
             <button class="reset" onclick="window.location.reload( )">다시하기</button>
+            <div class="test">
+                <a href=""></a>
+            </div>
+            <input type="text" id="userID" placeholder="아이디 8자 이상" />
+            <p class="info"></p>
         </div>
     </body>
     <script>
@@ -57,5 +62,29 @@
             }
         });
         scoreTxt.innerHTML = "점수 : " + score;
+
+        const testTxt = "javascript를 배우고 있습니다. 아직 많이 어렵습니다";
+        console.log(testTxt.substr(0, 4));
+        const testA = document.querySelector(".test a");
+        testA.textContent = testTxt.trim().substr(0, 20) + "..."; //substr() -> 지정한 글자 개수까지만 표시
+        console.log(testTxt.length); // 글자의 갯수
+        // trim(). -> 글자의 공백을 잘라냄
+        console.log(testTxt.charAt(1)); //해당되는 번호의 글자를 보여줌 = substr과 동일함 = testTxt.substr(0,1)
+        console.log(testTxt.charAt(testTxt.length - 1));
+
+        const userID = document.querySelector("#userID");
+        const info = document.querySelector(".info");
+        userID.addEventListener("keyup", function (e) {
+            if (userID.value.length < 8) {
+                info.textContent = "ID가 8글자가 되지 않습니다";
+            } else {
+                info.textContent = "ID가 8글자가 되었습니다.";
+            }
+            if (e.keyCode === 13 || e.key === "Enter") {
+                if (userID.value.length < 8) {
+                    alert("아이디는 8자 이상 써야 합니다.");
+                }
+            }
+        });
     </script>
 </html>
